@@ -1,4 +1,4 @@
-import { Bot, ChevronLeft, ChevronRight, Clock, MapPin } from "lucide-react";
+import { Bot, ChevronLeft, ChevronRight, Laptop } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 
 interface ProjectItemProps {
@@ -160,13 +160,17 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
                           {memory.time}
                         </div>
                         <h4 className="py-2">{memory.title}</h4>
-                        <div className="memory-image">{/* image */}</div>
+                        <span className="flex items-center text-[9px] text-[#c2b7f7] pb-2">
+                          <Laptop size={12} className="mr-2" />
+                          {memory.role}
+                        </span>
+                          <img src={memory.image} alt="" className="object-cover w-full h-28 rounded-md shadow-[0_0_20px_rgba(0,0,0,0.3)]" />
                         <Bot size={16} className="absolute bottom-20 right-6" />
                         <p className="text-[8px] flex flex-wrap pt-3">
                           {memory.tech.map((tech: any, index: number) => (
                             <span
                               key={index}
-                              className="rounded-full w-fit border border-gray-400 px-2 py-0.5 mb-1 mr-1 bg-[#00000050]"
+                              className="rounded-full w-fit border border-gray-400 px-2 py-0.5 mb-1 mr-1 bg-[#00000050] hover:bg-[#00000080] hover:translate-y-[-1px] hover:duration-300 hover:ease-in-out"
                             >
                               {tech}
                             </span>
@@ -192,7 +196,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
                           {memory.tech.map((tech: any, index: number) => (
                             <span
                               key={index}
-                              className="rounded-full w-fit border border-gray-400 px-2 py-0.5 mb-1 mr-1 text-[8px]"
+                              className="rounded-full w-fit border border-gray-400 px-2 py-0.5 mb-1 mr-1 text-[8px] text-white bg-[#00000050] hover:bg-[#00000080] hover:translate-y-[-1px] hover:duration-300 hover:ease-in-out"
                             >
                               {tech}
                             </span>
