@@ -137,10 +137,6 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
 
   return (
     <>
-      <div className="cosmos-background">
-        <div className="stars-container"></div>
-      </div>
-
       <div className="container-fluid d-flex flex-column">
         <main className="flex-grow-1 d-flex align-items-center justify-content-center position-relative">
           <div className="carousel-container" ref={containerRef}>

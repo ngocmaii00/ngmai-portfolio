@@ -10,7 +10,7 @@ const projectElements = [
       "UI with animations and transition effects.",
       "Full responsiveness for all devices.",
     ],
-    tech: ["ReactJS", "TailwindCSS", "Framer Motion", "TypeScript"],
+    tech: ["ReactJS", "TailwindCSS", "Framer Motion","Lightswind UI", "TypeScript"],
     time: "Jul 2025 - Aug 2025",
     image: "/project/portfolio.png",
     link: "https://github.com/ngocmaii00/spotify-clone",

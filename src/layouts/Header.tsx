@@ -3,8 +3,10 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useMemo } from "react";
 import HeaderItem from "../components/common/HeaderItem";
+import { Link } from "react-router-dom";
 
 interface HeaderItem {
+  link?: string;
   icon: React.ReactNode;
   label: string;
   onClick: () => void;
@@ -67,18 +69,20 @@ export default function Header({
         aria-label="Application dock"
       >
         {items.map((item, index) => (
-          <HeaderItem
-            key={index}
-            icon={item.icon}
-            label={item.label}
-            onClick={item.onClick}
-            mouseX={mouseX}
-            baseItemSize={baseItemSize}
-            magnification={magnification}
-            distance={distance}
-            spring={spring}
-            badgeCount={item.badgeCount}
-          />
+          <Link key={index} to={item.link || ""}>
+            <HeaderItem
+              key={index}
+              icon={item.icon}
+              label={item.label}
+              onClick={item.onClick}
+              mouseX={mouseX}
+              baseItemSize={baseItemSize}
+              magnification={magnification}
+              distance={distance}
+              spring={spring}
+              badgeCount={item.badgeCount}
+            />
+          </Link>
         ))}
       </motion.div>
     </motion.div>
