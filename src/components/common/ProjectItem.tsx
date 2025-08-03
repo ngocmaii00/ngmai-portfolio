@@ -1,4 +1,10 @@
-import { Bot, ChevronLeft, ChevronRight, Laptop } from "lucide-react";
+import {
+  Bot,
+  ChevronLeft,
+  ChevronRight,
+  ExternalLink,
+  Laptop,
+} from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 
 interface ProjectItemProps {
@@ -160,17 +166,32 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
                           {memory.time}
                         </div>
                         <h4 className="py-2">{memory.title}</h4>
-                        <span className="flex items-center text-[9px] text-[#c2b7f7] pb-2">
+                        <span className="flex items-center text-[9px] text-[#c2b7f7] pb-2 font-semibold">
                           <Laptop size={12} className="mr-2" />
-                          {memory.role}
+                          <p className="mt-[1px]">{memory.role}</p>
                         </span>
-                          <img src={memory.image} alt="" className="object-cover w-full h-28 rounded-md shadow-[0_0_20px_rgba(0,0,0,0.3)]" />
-                        <Bot size={16} className="absolute bottom-20 right-6" />
+                        <img
+                          src={memory.image}
+                          alt=""
+                          className="object-cover w-full h-28 rounded-md shadow-[0_0_20px_rgba(0,0,0,0.3)]"
+                        />
+                        <div className="absolute group top-6 right-6 size-7 rounded-full bg-[#00000050] hover:bg-[#00000080] hover:translate-y-[-1px] hover:duration-300 flex items-center justify-center shadow-[#ffffff70] shadow-[0_2px_5px]">
+                          <a
+                            href={memory.link}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <Bot
+                              size={16}
+                              className="text-gray-400 group-hover:text-white"
+                            />
+                          </a>
+                        </div>
                         <p className="text-[8px] flex flex-wrap pt-3">
                           {memory.tech.map((tech: any, index: number) => (
                             <span
                               key={index}
-                              className="rounded-full w-fit border border-gray-400 px-2 py-0.5 mb-1 mr-1 bg-[#00000050] hover:bg-[#00000080] hover:translate-y-[-1px] hover:duration-300 hover:ease-in-out"
+                              className="rounded-full w-fit border border-gray-600 px-2 py-0.5 mb-1 mr-1 bg-[#00000050] hover:bg-[#00000080] hover:translate-y-[-1px] hover:duration-300 hover:ease-in-out hover:border-white"
                             >
                               {tech}
                             </span>
@@ -189,19 +210,36 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
                             {text}
                           </li>
                         ))}
-                        <span className="text-[9px] text-[#9d8cf4] font-bold pt-3 pb-1">
-                          Tech stack:
-                        </span>
-                        <p className="flex flex-wrap items-center">
-                          {memory.tech.map((tech: any, index: number) => (
-                            <span
-                              key={index}
-                              className="rounded-full w-fit border border-gray-400 px-2 py-0.5 mb-1 mr-1 text-[8px] text-white bg-[#00000050] hover:bg-[#00000080] hover:translate-y-[-1px] hover:duration-300 hover:ease-in-out"
-                            >
-                              {tech}
+                        {memory.news && (
+                          <div className="flex items-center pt-3 pb-1 text-[9px] gap-x-2">
+                            <span className=" text-[#9d8cf4] font-bold ">
+                              Details:
                             </span>
-                          ))}
-                        </p>
+                            <a
+                              href={memory.news}
+                              target="_blank"
+                              className="underline flex gap-1"
+                            >
+                              Codefest 2025
+                              <ExternalLink size={10} />
+                            </a>
+                          </div>
+                        )}
+                        <div className="pt-3 pb-1">
+                          <span className="text-[9px] text-[#9d8cf4] font-bold ">
+                            Tech stack:
+                          </span>
+                          <p className="flex flex-wrap items-center">
+                            {memory.tech.map((tech: any, index: number) => (
+                              <span
+                                key={index}
+                                className="rounded-full w-fit border hover:border-white border-gray-600 px-2 py-0.5 mb-1 mr-1 text-[8px] text-white bg-[#00000050] hover:bg-[#00000080] hover:translate-y-[-1px] hover:duration-300 hover:ease-in-out"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>

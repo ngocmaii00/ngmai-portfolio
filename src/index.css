@@ -15,7 +15,7 @@
   --glow-accent: 0 0 10px rgba(255, 0, 229, 0.7),
     0 0 20px rgba(255, 0, 229, 0.5);
   --card-width: 230px;
-  --card-height: 280px;
+  --card-height: 300px;
   --carousel-radius: 400px;
   --transition-speed: 0.5s;
 }
@@ -190,7 +190,7 @@ h6 {
 
 .carousel-controls {
   position: absolute;
-  bottom: -50px;
+  bottom: -70px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
