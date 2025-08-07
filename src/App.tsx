@@ -3,8 +3,8 @@ import headerElements from "./data/headerElements";
 import About from "./layouts/About";
 import Project from "./layouts/Project";
 import { Route, Routes } from "react-router-dom";
-import { Home } from "lucide-react";
 import { AnimatePresence } from "framer-motion";
+import Home from "./layouts/Home";
 
 function App() {
   return (
