@@ -81,7 +81,7 @@ export const ResumeBorder = ({
   style,
   reverse = false,
   initialOffset = 0,
-  borderThickness = 1,
+  // borderThickness = 1,
   opacity = 1,
   glowIntensity = 0,
   beamBorderRadius,

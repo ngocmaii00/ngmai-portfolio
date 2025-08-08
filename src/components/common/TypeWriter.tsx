@@ -21,7 +21,6 @@ export const TypeWriter: React.FC<TypeWriterProps> = ({
 }) => {
   const [currentLineIndex, setCurrentLineIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
-  const [lineCompleted, setLineCompleted] = useState(false);
 
   useEffect(() => {
     if (currentLineIndex >= lines.length) return;
@@ -34,11 +33,9 @@ export const TypeWriter: React.FC<TypeWriterProps> = ({
       }, typingSpeed);
       return () => clearTimeout(timeout);
     } else {
-      setLineCompleted(true);
       const delay = setTimeout(() => {
         setCurrentLineIndex((prev) => prev + 1);
         setCurrentText("");
-        setLineCompleted(false);
       }, delayBetweenLines);
       return () => clearTimeout(delay);
     }
