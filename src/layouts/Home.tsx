@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Introduction from "../components/common/Introduction";
 import { useEffect, useState } from "react";
+import { ResumeBorder } from "../components/common/ResumeButton";
 
 const Home = () => {
   const [tooltipText, setTooltipText] = useState("");
@@ -20,13 +21,13 @@ const Home = () => {
 
     showTooltip();
 
-    const interval = setInterval(showTooltip, 12000);
+    const interval = setInterval(showTooltip, 10000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <motion.div className="absolute top-[30%] left-0 right-0 z-10">
+    <motion.div className="absolute top-[25%] left-0 right-0 z-10">
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -51,25 +52,24 @@ const Home = () => {
               </>
             )}
           </div>
-
-          <div className="border w-[525px] rounded-lg py-4 px-8 home-card pb-16">
-            <Introduction
-              text="Hi, I am Ngoc Mai."
-              fontsize="text-lg"
-              fontweight="font-extrabold"
-              delay={0.5}
-            />
-            <Introduction
-              text="I started my journey in software development with a strong passion forcreating practical, user-focused web applications."
-              fontsize="text-sm"
-              fontweight="font-medium"
-              delay={1}
-            />
-            <Introduction
-              text="I am always eager to explore new challenges and technologies. If youare interested in working together or just want to connect, feel free to drop me a message!"
-              fontsize="text-sm"
-              fontweight="font-medium"
-              delay={3}
+          <img src="/icon.png" className="absolute translate-y-[56em] spinner-bg" />
+          <img src="/moon-blue.png" className="absolute size-16 translate-x-[27em] translate-y-[-6em] spinner1 z-10" />
+          <div className="border w-[38%] rounded-lg py-4 px-8 home-card h-[300px] flex items-start">
+            <Introduction />
+            <ResumeBorder
+              size={150}
+              duration={6}
+              delay={0}
+              colorFrom="#181730"
+              colorTo="#aca9eb"
+              reverse={false}
+              initialOffset={0}
+              borderThickness={2}
+              opacity={1}
+              glowIntensity={8}
+              beamBorderRadius={45}
+              pauseOnHover={false}
+              speedMultiplier={1}
             />
           </div>
         </div>

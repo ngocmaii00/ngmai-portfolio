@@ -291,3 +291,45 @@ footer {
   border-right: 6px solid transparent;
   border-top: 10px solid white;
 }
+
+.animate-bounce-linear {
+  animation: bounce-linear 2s linear infinite;
+}
+
+@keyframes bounce-linear {
+  0%,
+  100% {
+    transform: translateY(-6%);
+  }
+  50% {
+    transform: translateY(0);
+  }
+}
+
+.spinner-bg {
+  border-top-color: transparent;
+  animation: spin 100s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner1 {
+  border-top-color: transparent;
+  animation: spin-back 10s linear infinite;
+}
+
+@keyframes spin-back {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.spinner2 {
+  border-top-color: transparent;
+  animation: spin 4s linear infinite;
+}
+

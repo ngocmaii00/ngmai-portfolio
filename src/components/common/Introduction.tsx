@@ -1,25 +1,16 @@
-import { TypingText } from "./TypeWriter";
+import { TypeWriter } from "./TypeWriter";
 
-interface IntroductionProps {
-    text: string;
-    delay?: number
-    fontsize?: string
-    fontweight?: string
-}
-const Introduction: React.FC<IntroductionProps> = function ({ text, delay, fontsize, fontweight }) {
+const Introduction = () => {
   return (
-    <div className="flex flex-col justify-start items-start py-2">
-      <TypingText
-        delay={delay}
-        duration={2}
-        fontSize={fontsize}
-        fontWeight={fontweight}
-        color="text-white"
-        className="home-title"
-      >
-        {text}
-      </TypingText>
+    <div className="py-2 home-title gap-4">
+      <h1 className="text-white text-2xl font-bold mb-4">Hi, I'm Ngoc Mai.</h1>
+      <TypeWriter lines={paragraphLines} typingSpeed={30} className="text-base" />
     </div>
   );
-}
-export default Introduction
+};
+export default Introduction;
+
+const paragraphLines = [
+  "I started my journey in software development with a strong passion for creating practical, user-focused web applications.", "\n",
+  "I'm always eager to expand my skill set and learn new technologies. If you are interested in working together or just want to connect, feel free to drop me a message!"
+];
