@@ -27,8 +27,8 @@ const headerElements = [
   },
   {
     icon: <Award size={24} className="text-white" />,
-    label: "Achieves",
-    link: "/achieves",
+    label: "Achievements",
+    link: "/achievements",
     onClick: () => console.log("Home clicked"),
   },
   {
